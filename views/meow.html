@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>BongoCatCaro</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 
 <body>
@@ -19,25 +19,43 @@
             <div id="paw-left" style="background-position-x: 0px;"></div>
             <div id="paw-right" style="background-position-x: 0px;"></div>
         </div>
+        <div class="instruments">
+            <div id="meow"></div>
+        </div>
     </div>
 
     <div class="vertical-menu">
         <a href="#" class="active">Instrument</a>
         <section class="menu" style="visibility: hidden;">
-            <a href="./views/bongo.html">Bongos</a>
-            <a href="./views/keyboard.html">Keyboard</a>
-            <a href="./views/meow.html">Meow</a>
-            <a href="./views/cymbal.html">Cymbal</a>
-            <a href="./views/marimba.html">Marimba</a>
-            <a href="./views/tambourine.html">Tambourine</a>
-            <a href="./views/cowbell.html">Cowbell</a>
+            <a href="./bongo.html">Bongos</a>
+            <a href="./keyboard.html">Keyboard</a>
+            <a href="./meow.html">Meow</a>
+            <a href="./cymbal.html">Cymbal</a>
+            <a href="./marimba.html">Marimba</a>
+            <a href="./tambourine.html">Tambourine</a>
+            <a href="./cowbell.html">Cowbell</a>
         </section>
     </div>
+    <div id="taps">
+        <div class="tap" id="tap-space" onmousedown="tap('../sounds/meow.mp3')" onclick="disTap()"><span i18n="MEOW">MEOW</span></div>
+    </div>
+    
+    <script>
+        function tap(audioUrl){
+            document.getElementById('mouth').style.backgroundPositionX = "-800px"
+            new Audio(audioUrl).play()
+        }
+
+        function disTap(){
+            document.getElementById('mouth').style.backgroundPositionX = "0px"
+        }
+    </script>
     <footer>
         <span i18n="other-lang"><a href="/?lang=ca">En català</a></span>
         <span i18n="courtesy">Art courtesy of <a href="https://twitter.com/StrayRogue" target="_blank">@StrayRogue</a></span>
         <span i18n="meme">Meme by <a href="https://twitter.com/DitzyFlama" target="_blank">@DitzyFlama</a></span>
         <span i18n="website">Website by <a href="https://erics.site/?utm_source=bongo.cat" target="_blank">Eric Huber</a> (<a href="https://twitter.com/Externalizable" target="_blank">@Externalizable</a>)</span>
     </footer>
+    
 </body>
 </html>
